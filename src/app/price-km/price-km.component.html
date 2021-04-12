@@ -1,0 +1,114 @@
+<div class="main-content" style="width: 1000px;">
+  
+  <div class="container-fluid">
+  <div class="row">
+  <div class="col-md-8">
+  <div class="card">
+  <div class="card-header card-header-success">
+    
+  <h4 class="card-title">Two wheeler Rate Chart</h4>
+  <p class="card-category"></p>
+  </div>
+  
+  <div class="card-body">
+  <div class="row">
+
+    <div class="col-md-4">
+      <h6>Base Price:</h6>
+    </div>
+  
+   <div class="col-md-6">
+    <mat-form-field class="example-full-width">
+  <input  matInput name="Base_fare" [(ngModel)]="Base_fare"   placeholder="Base price" value="Base_fare" required> 
+  </mat-form-field>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h6>0 To 5KM :</h6>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field class="example-full-width">
+        <input  matInput  name="T1_price" [(ngModel)]="T1_price" placeholder="Price" required> 
+      </mat-form-field>
+  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h6>5 To 7KM :</h6>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field class="example-full-width">
+      <input  matInput name="T2_price" [(ngModel)]="T2_price"  placeholder=" Price"required> 
+      </mat-form-field>
+      </div>
+ </div>
+  
+ <div class="row">
+  <div class="col-md-4">
+    <h6>7 To 10KM :</h6>
+  </div>
+  <div class="col-md-6">
+    <mat-form-field class="example-full-width">
+    <input  matInput name="T3_price" [(ngModel)]="T3_price"  placeholder="Price" value="T3_price"> 
+    </mat-form-field>
+    </div>
+
+ </div>
+ <div class="row">
+  <div class="col-md-4">
+    <h6>10 and above :</h6>
+  </div>
+  <div class="col-md-6">
+    <mat-form-field class="example-full-width">
+    <input matInput name="T4_price" [(ngModel)]="T4_price" value="T4_price" placeholder="price"> 
+    </mat-form-field>
+    </div>
+</div>
+
+<div class="col-md-6">
+  <h6>NiGHT 8PM TO MORNING 6AM    15% EXTRA</h6>
+</div>
+
+  
+  
+<!--    
+  <div class="row">
+    <div class="col-md-3">
+  <mat-form-field class="example-full-width">
+  <input  matInput name="T1_km" [(ngModel)]="T1_km"  placeholder="T1 km"> 
+  </mat-form-field>
+  </div>
+  <div class="col-md-3">
+  <mat-form-field class="example-full-width">
+  <input  matInput name="T2_km" [(ngModel)]="T2_km"  placeholder="T2 km"> 
+  </mat-form-field>
+  </div>
+  <div class="col-md-3">
+    <mat-form-field class="example-full-width">
+    <input  matInput name="T3_km" [(ngModel)]="T3_km"  placeholder="T3 km"> 
+    </mat-form-field>
+    </div>
+  </div>  -->
+  <br>
+
+  <div class="row">
+    
+    
+    
+   
+ 
+ <!-- <div class="btn btn-success pull-left">
+  <input  color="primary" type="checkbox" [checked]="active"   (change)="active=!active">active
+  </div> -->
+   <div class="col-md-12">
+  <button mat-raised-button type="submit"  (click)="onSubmit(Base_fare,T1_price,T2_price,T3_price,T4_price,T1_km,T2_km,T3_km)" class="btn btn-success pull-right">Update</button>
+  </div> 
+  </div>
+  </div>
+  </div> 
+  </div>
+  </div>
+  </div>

@@ -1,0 +1,192 @@
+<div class="main-content" style="width: 1000px;">
+  
+  <div class="container-fluid">
+  <div class="row">
+  <div class="col-md-8">
+  <div class="card">
+  <div class="card-header card-header-success">
+    <button mat-raised-button id="modal-cancel-button" style="margin-left:630px;" (click)="closeModal()">Back</button>
+  <h4 class="card-title">Two Wheeler Driver Registration</h4>
+  <p class="card-category">Complete your profile</p>
+  </div>
+  
+  <div class="card-body">
+  <div class="row">
+  <div class="col-md-4">
+    
+  <mat-form-field class="example-full-width" >
+    <input  matInput name="driver_name"[(ngModel)]="driver_name"  placeholder="Driver Name" value="driver_name" required >
+  </mat-form-field>
+  </div>
+   <div class="col-md-4">
+  <mat-form-field class="example-full-width">
+  <input  matInput name="email" [(ngModel)]="email"   placeholder="email" value="email" required> 
+  </mat-form-field>
+  </div>
+  <div class="col-md-4">
+  <mat-form-field class="example-full-width">
+    <input  matInput  name="phone" [(ngModel)]="phone" placeholder="phone num" required> 
+  </mat-form-field>
+
+  </div>
+  </div>
+  
+  
+  <div class="form-group">      
+  <div class="row">
+ 
+  <div class="col-md-6">
+    <mat-form-field class="example-full-width">
+    <input  matInput name="vehicle_number" [(ngModel)]="vehicle_number"  placeholder="vehicle_number"required> 
+    </mat-form-field>
+    </div>
+  </div>
+  </div>
+  
+  
+   <label>Driver Address :</label><br>
+  <div class="row">
+  <div class="col-md-3">
+  <mat-form-field class="example-full-width">
+  <input  matInput name="driver_address" [(ngModel)]="driver_address"  placeholder="Address" value="driver_address"> 
+  </mat-form-field>
+  </div>
+  <div class="col-md-3">
+  <mat-form-field class="example-full-width">
+  <input matInput name="driver_city" [(ngModel)]="driver_city" value="driver_city" placeholder="driver_city"> 
+  </mat-form-field>
+  </div>
+  <div class="col-md-3">
+  <mat-form-field class="example-full-width">
+  <input  matInput name="driver_state" [(ngModel)]="driver_state"  placeholder="State"> 
+  </mat-form-field>
+  </div>
+  <div class="col-md-3">
+  <mat-form-field class="example-full-width">
+  <input  matInput name="driver_zip" [(ngModel)]="driver_zip"  placeholder="Zip"> 
+  </mat-form-field>
+  </div>
+  </div> 
+  <br>
+  <label> Owner Bank Details:</label><br>                                                      
+    <div class="row">
+    <div class="col-md-3">
+    <mat-form-field class="example-full-width">
+    <input matInput   name="bank_name" [(ngModel)]="bank_name" placeholder="Bank Name"required> 
+    </mat-form-field>
+    </div>
+    <div class="col-md-3">
+    <mat-form-field class="example-full-width">
+    <input matInput   name="account_no" [(ngModel)]="account_no" placeholder="Account Number"required> 
+    </mat-form-field>
+    </div>
+    <div class="col-md-3">
+    <mat-form-field class="example-full-width">
+    <input matInput   name="IFSC_code" [(ngModel)]="IFSC_code" placeholder="IFSC Code"required> 
+    </mat-form-field>
+    </div>
+    <div class="col-md-3">
+      <mat-form-field class="example-full-width">
+      <input matInput   name="type_of_account" [(ngModel)]="type_of_account" placeholder="Type of Account"required> 
+      </mat-form-field>
+      </div>
+    <!-- <div class="col-md-3">
+    <mat-form-field class="example-full-width">
+    <mat-label>Type of Account</mat-label>
+    <mat-select [(ngModel)]="type_of_account"name="type_of_account">
+    <mat-option *ngFor="let account of accounts" [value]="account.id" > {{account.name}}
+    </mat-option>
+    </mat-select>
+    </mat-form-field>
+    </div> -->
+    <!-- <div class="col-md-3">
+      <mat-form-field class="example-full-width">
+      <input matInput   name="accountholder_name" [(ngModel)]="accountholder_name" placeholder="Account Holder Name"required> 
+      </mat-form-field>
+      </div> -->
+    </div>
+  <div class="row">
+    
+    <div class="col-md-6" >
+      <label  style="color: black;">Profile Photo:</label>
+      <br>
+      <input #profilephoto type="file"   name="profile_photo" (change)='onprofilephotoFileChange($event)' /><br>
+      <button (click)="rotate()">rotate</button>
+      <div class="main">
+        <a href="{{this.profile_photo}}" target="profile_photo" >
+      <img [src]="profile_photo"  [@rotatedState]='state' style="width: 250px;height:250px;">
+        </a>
+    </div>
+      </div>
+    
+   
+      <div class="col-md-6" >
+        <label  style="color: black;">DLscancopy:</label>
+      <br>
+        <input #dlscancopy type="file"   name="dl_scan_copy" (change)='onDlscancopyFileChange($event)' /><br>
+        <button (click)="rotate1()">rotate</button>
+        <div class="main">
+          <a href="{{this.dl_scan_copy}}" target="dl_scan_copy" >
+        <img [src]="dl_scan_copy"  [@rotatedState]='state1' style="width: 250px;height:250px;">
+          </a>
+      </div>
+        </div>
+      <br>
+      <div class="col-md-6" >
+        <label  style="color: black;">Insurence Image:</label>
+      <br>
+        <input #insuranceimage type="file"   name="insurance_image" (change)='onInsuranceimageFileChange($event)' /><br>
+        <button (click)="rotate2()">rotate</button>
+        <div class="main">
+          <a href="{{this.insurance_image}}" target="insurance_image" >
+        <img [src]="insurance_image"  [@rotatedState]='state2' style="width: 250px;height:250px;">
+          </a>
+      </div>
+        </div>
+        <div class="col-md-6" >
+          <label  style="color: black;">RCcard Image:</label>
+      <br>
+          <input #rccardimage type="file"   name="rc_card_image" (change)='onRccardimageFileChange($event)' /><br>
+          <button (click)="rotate3()">rotate</button>
+          <div class="main">
+            <a href="{{this.rc_card_image}}" target="rc_card_image" >
+          <img [src]="rc_card_image"  [@rotatedState]='state3' style="width: 250px;height:250px;">
+            </a>
+        </div>
+          </div>
+
+          <div class="col-md-6" >
+            <label  style="color: black;">Driver aadharCard:</label>
+      <br>
+            <input #driveraadharcard type="file"   name="driver_aadhar_card" (change)='onDriveraadharcardFileChange($event)' /><br>
+            <button (click)="rotate4()">rotate</button>
+            <div class="main">
+              <a href="{{this.driver_aadhar_card}}" target="driver_aadhar_card" >
+            <img [src]="driver_aadhar_card"  [@rotatedState]='state4' style="width: 250px;height:250px;">
+              </a>
+          </div>
+            </div>
+            <div class="col-md-6" >
+              <label  style="color: black;">Cancelled cheque Image:</label>
+      <br>
+              <input #cancelledchequeimage type="file"   name="cancelled_cheque_image" (change)='onCancelledchequeimageFileChanged($event)' /><br>
+              <button (click)="rotate5()">rotate</button>
+              <div class="main">
+                <a href="{{this.cancelled_cheque_image}}" target="cancelled_cheque_image" >
+              <img [src]="cancelled_cheque_image"  [@rotatedState]='state5' style="width: 250px;height:250px;">
+                </a>
+            </div>
+              </div>
+</div>
+<div class="btn btn-success pull-left">
+  <input  color="primary" type="checkbox" [checked]="active"   (change)="active=!active">active
+  </div>
+   <div class="col-md-12">
+  <button mat-raised-button type="submit"  (click)="onSubmit(driver_name,email,phone,driver_address,driver_city,driver_state,driver_zip,vehicle_number,bank_name,account_no,IFSC_code,type_of_account,active)" class="btn btn-success pull-right">Update Profile</button>
+  </div>
+  </div>
+  </div>
+  </div> 
+  </div>
+  </div>
+  </div>
